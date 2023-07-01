@@ -1,3 +1,5 @@
+package Paneles;
+
 import javax.swing.*;
 
 import static java.lang.System.exit;
@@ -15,11 +17,10 @@ public class menu_principal {
 
         if (selectedValue != null) {
 
-            System.out.println("no es null");
-
             if (selectedValue.equals("Conversor de monedas")) {
 
-                System.out.println("primero");
+                    //IngresarDinero.main();
+                    ConvertirMoneda moneda = new ConvertirMoneda();
 
             }
 
