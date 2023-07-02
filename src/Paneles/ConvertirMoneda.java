@@ -3,12 +3,11 @@ package Paneles;
 import Excepcion.MiExcepcion;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
-import static java.lang.System.exit;
 
 public class ConvertirMoneda extends JFrame {
     private JButton convertirButton;
@@ -37,7 +36,6 @@ public class ConvertirMoneda extends JFrame {
                 }
                 if (b == 0) {
                     evt.consume();
-                    getToolkit().beep();
                 }
             }
         });
@@ -78,7 +76,7 @@ public class ConvertirMoneda extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pantalla.setVisible(false);
-                    new menu_principal().main(new String[]{""});
+                    new MenuPrincipal().main(new String[]{""});
             }
         });
     }
@@ -88,6 +86,8 @@ public class ConvertirMoneda extends JFrame {
         pantalla.setContentPane(new ConvertirMoneda().panel);
         pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pantalla.setVisible(true);
+        pantalla.setResizable(false);
+        pantalla.setLocationRelativeTo(null);
         pantalla.pack();
 
     }

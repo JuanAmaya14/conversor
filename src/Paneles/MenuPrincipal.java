@@ -6,9 +6,9 @@ import javax.swing.*;
 
 import static java.lang.System.exit;
 
-public class menu_principal {
+public class MenuPrincipal {
 
-    public menu_principal() {
+    public MenuPrincipal() {
     }
 
     public static void main(String[] args) throws MiExcepcion {
