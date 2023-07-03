@@ -1,13 +1,16 @@
 package Paneles;
 
 import Excepcion.MiExcepcion;
+import Moneda.Monedas;
+import Moneda.ProcesoConvertir;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import static java.lang.System.exit;
 
 public class ConvertirMoneda extends JFrame {
     private JButton convertirButton;
@@ -18,10 +21,11 @@ public class ConvertirMoneda extends JFrame {
     private JButton atrasButton;
     private JPanel panel;
     private JLabel outputDinero;
+    private JButton Finalizar;
 
     private static ConvertirMoneda pantalla = new ConvertirMoneda();
 
-    public ConvertirMoneda() {
+    public ConvertirMoneda(){
 
         inputDinero.addKeyListener(new KeyAdapter() {
             @Override
@@ -55,7 +59,6 @@ public class ConvertirMoneda extends JFrame {
                             "ERROR", JOptionPane.ERROR_MESSAGE);
                     ex.printStackTrace();
                 }
-                outputDinero.setText(String.valueOf(dinero));
 
                 String entradaMoneda = String.valueOf(moneda1.getSelectedItem());
 
@@ -70,13 +73,35 @@ public class ConvertirMoneda extends JFrame {
 
                 }
 
+                ProcesoConvertir resultado = new ProcesoConvertir(entradaMoneda, salidaMoneda, dinero);
+
+
+                outputDinero.setText(String.valueOf(resultado.toString()));
+
             }
         });
         atrasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pantalla.setVisible(false);
-                    new MenuPrincipal().main(new String[]{""});
+                new MenuPrincipal().main(new String[]{""});
+            }
+        });
+        Finalizar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if(JOptionPane.showConfirmDialog(null, "¿Quieres finalizar el programa?",
+                        "", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
+
+                    exit(0);
+
+                }else{
+
+                    pantalla.setVisible(true);
+
+                }
+
             }
         });
     }

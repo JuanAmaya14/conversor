@@ -24,7 +24,7 @@ public class MenuPrincipal {
 
             if (selectedValue.equals("Conversor de monedas")) {
 
-                    new ConvertirMoneda().main(new String[]{""});
+                new ConvertirMoneda().main(new String[]{""});
 
             } else if (selectedValue.equals("Conversor de temperatura")) {
 
