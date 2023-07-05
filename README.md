@@ -14,8 +14,7 @@ Un programa que cuenta con conversor se monedas (COP, USA, EUR, GBP, JPY y KRW),
 
 
 ### Conversor de temperatura
-
-*[En desarrollo]*
+![temperatura](https://github.com/JuanAmaya14/conversor/assets/66374583/74da9674-67a3-413b-a13a-e91e882a0e01)
 
 
 ### Conversor de frecuencia
