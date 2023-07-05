@@ -4,13 +4,13 @@ import java.text.DecimalFormat;
 
 import static Moneda.Monedas.*;
 
-public class ProcesoConvertir {
+public class ProcesoConvertirMoneda {
 
     private double resultado = 0;
 
-    private DecimalFormat decimalFormat = new DecimalFormat("#.00000");
+    private DecimalFormat decimalFormat = new DecimalFormat("0.00000");
 
-    public ProcesoConvertir(String entradaMoneda, String salidaMoneda, double dinero) {
+    public ProcesoConvertirMoneda(String entradaMoneda, String salidaMoneda, double dinero) {
 
         //Peso colombiano a [...]
         if (entradaMoneda == "COP" && salidaMoneda == "USD") {

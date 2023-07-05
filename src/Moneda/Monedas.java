@@ -29,7 +29,7 @@ public class Monedas {
     }
 
     //Dolar estadounidense
-    public static HashMap<String, Double> Dolar(){
+    public static HashMap<String, Double> Dolar() {
 
         HashMap<String, Double> USD = new HashMap<String, Double>();
 
@@ -44,7 +44,7 @@ public class Monedas {
     }
 
     //Euro
-    public static HashMap<String, Double> Euro(){
+    public static HashMap<String, Double> Euro() {
 
         HashMap<String, Double> EUR = new HashMap<String, Double>();
 

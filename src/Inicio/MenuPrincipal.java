@@ -1,6 +1,8 @@
-package Paneles;
+package Inicio;
 
 import Excepcion.MiExcepcion;
+import Paneles.ConvertirMoneda;
+import Paneles.ConvertirTemperatura;
 
 import javax.swing.*;
 
@@ -13,7 +15,7 @@ public class MenuPrincipal {
 
     public static void main(String[] args) throws MiExcepcion {
 
-        Object[] possibleValues = {"Conversor de monedas", "Conversor de temperatura"};
+        Object[] possibleValues = {"Conversor de monedas", "Conversor de temperatura", "Conversion de frecuencia"};
 
         Object selectedValue = JOptionPane.showInputDialog(null,
                 "Seleccione una opcion de conversion", "Menu",
@@ -28,7 +30,11 @@ public class MenuPrincipal {
 
             } else if (selectedValue.equals("Conversor de temperatura")) {
 
-                System.out.println("Conversor de temperatura");
+                new ConvertirTemperatura().main(new String[]{""});
+
+            } else if (selectedValue.equals("Conversion de frecuencia")) {
+
+                System.out.println("Conversor de frecuencia");
 
             }
 

@@ -2,7 +2,7 @@ package Paneles;
 
 import Excepcion.MiExcepcion;
 import Inicio.MenuPrincipal;
-import Moneda.ProcesoConvertirMoneda;
+import Temperatura.ProcesoConvertirTemperatura;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -12,25 +12,25 @@ import java.awt.event.KeyEvent;
 
 import static java.lang.System.exit;
 
-public class ConvertirMoneda extends JFrame {
+public class ConvertirTemperatura extends JFrame {
     private JButton convertirButton;
-    private JTextField inputDinero;
+    private JTextField inputTemperatura;
 
-    private JComboBox moneda1;
-    private JComboBox moneda2;
+    private JComboBox temperatura1;
+    private JComboBox temperatura2;
     private JButton atrasButton;
     private JPanel panel;
-    private JLabel outputDinero;
+    private JLabel outputTemperatura;
     private JButton Finalizar;
 
-    private static ConvertirMoneda pantalla = new ConvertirMoneda();
+    private static ConvertirTemperatura pantalla = new ConvertirTemperatura();
 
-    public ConvertirMoneda() {
+    public ConvertirTemperatura() {
 
-        inputDinero.addKeyListener(new KeyAdapter() {
+        inputTemperatura.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent evt) {
-                char[] caracteres = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'};
+                char[] caracteres = {'-', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
                 int b = 0;
                 for (int i = 0; i <= 10; i++) {
                     if (caracteres[i] == evt.getKeyChar()) {
@@ -49,15 +49,15 @@ public class ConvertirMoneda extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                double dinero = 0;
+                double numero = 0;
 
-                String entradaMoneda = String.valueOf(moneda1.getSelectedItem());
+                String entradaTemperatura = String.valueOf(temperatura1.getSelectedItem());
 
-                String salidaMoneda = String.valueOf(moneda2.getSelectedItem());
+                String salidaTemperatura = String.valueOf(temperatura2.getSelectedItem());
 
                 try {
 
-                    dinero = Double.valueOf(inputDinero.getText());
+                    numero = Double.valueOf(inputTemperatura.getText());
 
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "La entrada no puede estar vacia",
@@ -65,18 +65,18 @@ public class ConvertirMoneda extends JFrame {
                     ex.printStackTrace();
                 }
 
-                if (entradaMoneda == salidaMoneda) {
+                if (entradaTemperatura == salidaTemperatura) {
 
-                    JOptionPane.showMessageDialog(null, "No puedes poner dos monedas iguales",
+                    JOptionPane.showMessageDialog(null, "No puedes poner dos unidades de temperatura iguales",
                             "ERROR", JOptionPane.ERROR_MESSAGE);
 
-                    throw new MiExcepcion("Las monedas no deben ser iguales");
+                    throw new MiExcepcion("Las unidades de temperatura no deben ser iguales");
 
-                } else {
-
-                    ProcesoConvertirMoneda moneda = new ProcesoConvertirMoneda(entradaMoneda, salidaMoneda, dinero);
-                    outputDinero.setText(String.valueOf(moneda.toString()));
                 }
+
+                ProcesoConvertirTemperatura temperatura = new ProcesoConvertirTemperatura(entradaTemperatura, salidaTemperatura, numero);
+
+                outputTemperatura.setText(String.valueOf(temperatura.toString()));
 
             }
         });
@@ -104,11 +104,12 @@ public class ConvertirMoneda extends JFrame {
 
             }
         });
+
     }
 
     public static void main(String[] args) {
 
-        pantalla.setContentPane(new ConvertirMoneda().panel);
+        pantalla.setContentPane(new ConvertirTemperatura().panel);
         pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pantalla.setVisible(true);
         pantalla.setResizable(false);
@@ -118,7 +119,3 @@ public class ConvertirMoneda extends JFrame {
     }
 
 }
-
-
-
-
