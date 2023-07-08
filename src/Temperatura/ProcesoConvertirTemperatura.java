@@ -2,6 +2,7 @@ package Temperatura;
 
 import java.text.DecimalFormat;
 
+//Logica para convertir la temperatura en diferentes unidades
 public class ProcesoConvertirTemperatura {
 
     private double resultado = 0;
@@ -10,7 +11,7 @@ public class ProcesoConvertirTemperatura {
 
     public ProcesoConvertirTemperatura(String entradaTemperatura, String salidaTemperatura, double temperatura) {
 
-        //Grado Celsius a [...]
+        //Grados Celsius a [...]
         if (entradaTemperatura == "Celcius" && salidaTemperatura == "Farenheit") {
 
             resultado = (temperatura * 9/5) + 32;
@@ -23,7 +24,7 @@ public class ProcesoConvertirTemperatura {
 
         }
 
-        //Farenheit a [...]
+        //Grados Farenheit a [...]
         if (entradaTemperatura == "Farenheit" && salidaTemperatura == "Celcius") {
 
             resultado = (temperatura - 32) * 5/9;
@@ -35,7 +36,7 @@ public class ProcesoConvertirTemperatura {
 
         }
 
-        //Kelvin a [...]
+        //Grados Kelvin a [...]
         if (entradaTemperatura == "Kelvin" && salidaTemperatura == "Farenheit") {
 
             resultado = (temperatura - 273.15) * 9/5 + 32;
@@ -49,6 +50,7 @@ public class ProcesoConvertirTemperatura {
         }
     }
 
+    //Envia el valor convertido
     @Override
     public String toString() {
         return String.valueOf(decimalFormat.format(resultado));

@@ -2,6 +2,7 @@ package Moneda;
 
 import java.util.HashMap;
 
+//Lista de monedas y el valor de cada una a dierentes monedas
 public class Monedas {
 
     /*

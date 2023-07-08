@@ -4,10 +4,12 @@ import java.text.DecimalFormat;
 
 import static Moneda.Monedas.*;
 
+//Logica para convertir una moneda a otra
 public class ProcesoConvertirMoneda {
 
     private double resultado = 0;
 
+    //Formato a double por defecto
     private DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     public ProcesoConvertirMoneda(String entradaMoneda, String salidaMoneda, double dinero) {
@@ -163,6 +165,7 @@ public class ProcesoConvertirMoneda {
 
     }
 
+    //Envia el valor convertido
     @Override
     public String toString() {
         return String.valueOf(decimalFormat.format(resultado));

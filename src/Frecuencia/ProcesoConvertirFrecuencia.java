@@ -2,10 +2,12 @@ package Frecuencia;
 
 import java.text.DecimalFormat;
 
+//Logica para convertir la frecuencia en diferentes unidades
 public class ProcesoConvertirFrecuencia {
 
     private double resultado = 0;
 
+    //Formato por defecto del double
     private DecimalFormat decimalFormat = new DecimalFormat("0.000000000");
 
     public ProcesoConvertirFrecuencia(String entradaFrecuencia, String salidaFrecuencia, double frecuencia) {
@@ -82,6 +84,7 @@ public class ProcesoConvertirFrecuencia {
         }
     }
 
+    //Envia el valor convertido
     @Override
     public String toString() {
         return String.valueOf(decimalFormat.format(resultado));
