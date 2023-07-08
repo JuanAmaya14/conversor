@@ -1,6 +1,7 @@
 package Inicio;
 
 import Excepcion.MiExcepcion;
+import Paneles.ConvertirFrecuencia;
 import Paneles.ConvertirMoneda;
 import Paneles.ConvertirTemperatura;
 
@@ -34,7 +35,7 @@ public class MenuPrincipal {
 
             } else if (selectedValue.equals("Conversion de frecuencia")) {
 
-                System.out.println("Conversor de frecuencia");
+                new ConvertirFrecuencia().main(new String[]{""});
 
             }
 

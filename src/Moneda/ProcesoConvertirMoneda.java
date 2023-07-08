@@ -8,7 +8,7 @@ public class ProcesoConvertirMoneda {
 
     private double resultado = 0;
 
-    private DecimalFormat decimalFormat = new DecimalFormat("0.00000");
+    private DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     public ProcesoConvertirMoneda(String entradaMoneda, String salidaMoneda, double dinero) {
 
@@ -16,18 +16,22 @@ public class ProcesoConvertirMoneda {
         if (entradaMoneda == "COP" && salidaMoneda == "USD") {
 
             resultado = Colombianos().get("USD") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "COP" && salidaMoneda == "EUR") {
 
             resultado = Colombianos().get("EUR") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "COP" && salidaMoneda == "GBP") {
 
             resultado = Colombianos().get("GBP") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "COP" && salidaMoneda == "JPY") {
 
             resultado = Colombianos().get("JPY") * dinero;
+            decimalFormat = new DecimalFormat("0.000");
 
         } else if (entradaMoneda == "COP" && salidaMoneda == "KRW") {
 
@@ -113,14 +117,17 @@ public class ProcesoConvertirMoneda {
         } else if (entradaMoneda == "JPY" && salidaMoneda == "USD") {
 
             resultado = YenJapones().get("USD") * dinero;
+            decimalFormat = new DecimalFormat("0.0000");
 
         } else if (entradaMoneda == "JPY" && salidaMoneda == "EUR") {
 
             resultado = YenJapones().get("EUR") * dinero;
+            decimalFormat = new DecimalFormat("0.0000");
 
         } else if (entradaMoneda == "JPY" && salidaMoneda == "GBP") {
 
             resultado = YenJapones().get("GBP") * dinero;
+            decimalFormat = new DecimalFormat("0.0000");
 
         } else if (entradaMoneda == "JPY" && salidaMoneda == "KRW") {
 
@@ -136,14 +143,17 @@ public class ProcesoConvertirMoneda {
         } else if (entradaMoneda == "KRW" && salidaMoneda == "USD") {
 
             resultado = WonSurCoreano().get("USD") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "KRW" && salidaMoneda == "EUR") {
 
             resultado = WonSurCoreano().get("EUR") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "KRW" && salidaMoneda == "GBP") {
 
             resultado = WonSurCoreano().get("GBP") * dinero;
+            decimalFormat = new DecimalFormat("0.00000");
 
         } else if (entradaMoneda == "KRW" && salidaMoneda == "JPY") {
 

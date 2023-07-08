@@ -2,8 +2,6 @@ package Temperatura;
 
 import java.text.DecimalFormat;
 
-import static Moneda.Monedas.*;
-
 public class ProcesoConvertirTemperatura {
 
     private double resultado = 0;
@@ -16,10 +14,12 @@ public class ProcesoConvertirTemperatura {
         if (entradaTemperatura == "Celcius" && salidaTemperatura == "Farenheit") {
 
             resultado = (temperatura * 9/5) + 32;
+            decimalFormat = new DecimalFormat("0.0");
 
         } else if (entradaTemperatura == "Celcius" && salidaTemperatura == "Kelvin") {
 
             resultado = temperatura + 273.15;
+            decimalFormat = new DecimalFormat("0.00");
 
         }
 
@@ -31,6 +31,7 @@ public class ProcesoConvertirTemperatura {
         } else if (entradaTemperatura == "Farenheit" && salidaTemperatura == "Kelvin") {
 
             resultado = (temperatura - 32) * 5/9 + 273.15;
+            decimalFormat = new DecimalFormat("0.000");
 
         }
 
@@ -38,10 +39,12 @@ public class ProcesoConvertirTemperatura {
         if (entradaTemperatura == "Kelvin" && salidaTemperatura == "Farenheit") {
 
             resultado = (temperatura - 273.15) * 9/5 + 32;
+            decimalFormat = new DecimalFormat("0.00");
 
         } else if (entradaTemperatura == "Kelvin" && salidaTemperatura == "Celcius") {
 
             resultado = temperatura - 273.15;
+            decimalFormat = new DecimalFormat("0.00");
 
         }
     }

@@ -1,31 +1,31 @@
 package Paneles;
 
 import Excepcion.MiExcepcion;
+import Frecuencia.ProcesoConvertirFrecuencia;
 import Inicio.MenuPrincipal;
-import Temperatura.ProcesoConvertirTemperatura;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+
 import static java.lang.System.exit;
 
-public class ConvertirTemperatura extends JFrame {
-    private JButton convertirButton;
-    private JTextField inputTemperatura;
-
-    private JComboBox temperatura1;
-    private JComboBox temperatura2;
-    private JButton atrasButton;
+public class ConvertirFrecuencia extends JFrame {
     private JPanel panel;
-    private JLabel outputTemperatura;
+    private JButton convertirButton;
+    private JTextField inputFrecuencia;
+    private JLabel outputFrecuencia;
+    private JComboBox frecuencia1;
+    private JComboBox frecuencia2;
+    private JButton atrasButton;
     private JButton Finalizar;
 
-    private static ConvertirTemperatura pantalla = new ConvertirTemperatura();
+    private static ConvertirFrecuencia pantalla = new ConvertirFrecuencia();
 
-    public ConvertirTemperatura() {
+    public ConvertirFrecuencia() {
 
-        inputTemperatura.addKeyListener(new KeyAdapter() {
+        inputFrecuencia.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent evt) {
                 char[] caracteres = {'-', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
@@ -48,16 +48,15 @@ public class ConvertirTemperatura extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 double numero = 0;
-
                 boolean seguir = true;
 
-                String entradaTemperatura = String.valueOf(temperatura1.getSelectedItem());
+                String entradaFrecuencia = String.valueOf(frecuencia1.getSelectedItem());
 
-                String salidaTemperatura = String.valueOf(temperatura2.getSelectedItem());
+                String salidaFrecuencia = String.valueOf(frecuencia2.getSelectedItem());
 
                 try {
 
-                    numero = Double.valueOf(inputTemperatura.getText());
+                    numero = Double.valueOf(inputFrecuencia.getText());
 
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "La entrada no puede estar vacia",
@@ -66,7 +65,7 @@ public class ConvertirTemperatura extends JFrame {
                     seguir = false;
                 }
 
-                if (entradaTemperatura == salidaTemperatura) {
+                if (entradaFrecuencia == salidaFrecuencia) {
 
                     JOptionPane.showMessageDialog(null, "No puedes poner dos unidades de temperatura iguales",
                             "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -75,9 +74,9 @@ public class ConvertirTemperatura extends JFrame {
 
                 }else if(seguir == true){
 
-                    ProcesoConvertirTemperatura temperatura = new ProcesoConvertirTemperatura(entradaTemperatura, salidaTemperatura, numero);
+                    ProcesoConvertirFrecuencia temperatura = new ProcesoConvertirFrecuencia(entradaFrecuencia, salidaFrecuencia, numero);
 
-                    outputTemperatura.setText(String.valueOf(temperatura.toString()));
+                    outputFrecuencia.setText(String.valueOf(temperatura.toString()));
 
                 }
 
@@ -112,16 +111,13 @@ public class ConvertirTemperatura extends JFrame {
 
     public static void main(String[] args) {
 
-        pantalla.setContentPane(new ConvertirTemperatura().panel);
+        pantalla.setContentPane(new ConvertirFrecuencia().panel);
         pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pantalla.setBackground(Color.black);
         pantalla.setVisible(true);
         pantalla.setResizable(false);
         pantalla.setLocationRelativeTo(null);
         pantalla.pack();
-
-        String hola = null;
-
 
     }
 

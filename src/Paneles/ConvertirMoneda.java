@@ -5,10 +5,8 @@ import Inicio.MenuPrincipal;
 import Moneda.ProcesoConvertirMoneda;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.*;
+import java.awt.event.*;
 
 import static java.lang.System.exit;
 
@@ -50,6 +48,7 @@ public class ConvertirMoneda extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 double dinero = 0;
+                boolean seguir = true;
 
                 String entradaMoneda = String.valueOf(moneda1.getSelectedItem());
 
@@ -63,6 +62,7 @@ public class ConvertirMoneda extends JFrame {
                     JOptionPane.showMessageDialog(null, "La entrada no puede estar vacia",
                             "ERROR", JOptionPane.ERROR_MESSAGE);
                     ex.printStackTrace();
+                    seguir = false;
                 }
 
                 if (entradaMoneda == salidaMoneda) {
@@ -72,7 +72,7 @@ public class ConvertirMoneda extends JFrame {
 
                     throw new MiExcepcion("Las monedas no deben ser iguales");
 
-                } else {
+                } else if(seguir == true) {
 
                     ProcesoConvertirMoneda moneda = new ProcesoConvertirMoneda(entradaMoneda, salidaMoneda, dinero);
                     outputDinero.setText(String.valueOf(moneda.toString()));
@@ -110,6 +110,7 @@ public class ConvertirMoneda extends JFrame {
 
         pantalla.setContentPane(new ConvertirMoneda().panel);
         pantalla.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pantalla.setBackground(Color.black);
         pantalla.setVisible(true);
         pantalla.setResizable(false);
         pantalla.setLocationRelativeTo(null);
