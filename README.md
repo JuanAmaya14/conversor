@@ -1,6 +1,6 @@
 # Conversor de moneda, temperatura y frecuencia.
 
-<p align="left"><img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green"></p>
+<p align="left"><img src="https://img.shields.io/badge/STATUS-COMPLETO-green"></p>
 
 ## Descripción del Proyecto
 
@@ -10,16 +10,15 @@ Un programa que cuenta con conversor se monedas (COP, USA, EUR, GBP, JPY y KRW),
 ## Demostración de funciones y aplicaciones
 
 ### Conversor de monedas
-![moneda_1](https://github.com/JuanAmaya14/conversor/assets/66374583/354f6731-10ce-46d6-95e8-58c64ee59bdf)
+![moneda](https://github.com/JuanAmaya14/conversor/assets/66374583/3919714f-2227-41dc-9683-15f85d91723e)
 
 
 ### Conversor de temperatura
-![temperatura](https://github.com/JuanAmaya14/conversor/assets/66374583/74da9674-67a3-413b-a13a-e91e882a0e01)
+![temperatura](https://github.com/JuanAmaya14/conversor/assets/66374583/f9f86ff9-9b92-4269-af54-1490a20e285b)
 
 
 ### Conversor de frecuencia
-
-*[En desarrollo]*
+![frecuencia](https://github.com/JuanAmaya14/conversor/assets/66374583/d4a67ff0-1425-4476-a891-01c02b4a93ef)
 
 
 ## Tecnologías utilizadas
